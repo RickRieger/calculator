@@ -25,15 +25,17 @@
   flex-wrap: wrap;
 }
 
+
 #screen{
   height:140px;
   width:540px;
   background-color: rgb(77, 77, 77);
   margin:auto;
   margin-top:60px;
-  margin-bottom:;
   border-radius: 20px;
+  color:rgb(240, 240, 240);
 }
+
 
 #button_container{
 display: flex;
@@ -47,6 +49,7 @@ margin:auto;
 margin-bottom: 80px;
 }
 
+
 .buttons{
   width:15%;
   height:15%;
@@ -54,6 +57,7 @@ margin-bottom: 80px;
   background-color:rgb(18, 216, 223);
   margin:2%;
 }
+
 
 .topRowButtons{
   width:15%;
@@ -63,12 +67,12 @@ margin-bottom: 80px;
   margin:2%;
 }
 
+
 .equalButton{
   width:15%;
   height:75.5%;
   border-radius: 20px;
   background-color:orange;
   margin:2%;
-  
 }
 
