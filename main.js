@@ -1,243 +1,222 @@
-// My version of Sensi's approach (Alex Crist)       
+// My version of Sensei's approach (Alex Crist)
 
-// One approach is to store our two numbers and one operation as strings so that 
+// One approach is to store our two numbers and one operation as strings so that
 // we can easily add characters as the user presses buttons
-
-
 
 let firstNumber = '';
 let secondNumber = '';
 let operation = '';
-
-
-
-
+let result = '';
 
 // Updates the screen based on `firstNumber`, `operation`, and `secondNumber`
 function updateScreen() {
-  document.querySelector('#screen').innerText = firstNumber +' '+ operation +' '+ secondNumber;
+  if (firstNumber && !secondNumber) {
+    document.querySelector('#screen').innerText = firstNumber;
+  } else {
+    document.querySelector('#screen').innerText = secondNumber;
+  }
 }
-
-
-
-
-
 
 // Query selectors that grab the beautiful buttons in our calculator
 
-const one = document.querySelector('#one')
-const two = document.querySelector('#two')
-const three = document.querySelector('#three')
-const four = document.querySelector('#four')
-const five = document.querySelector('#five')
-const six = document.querySelector('#six')
-const seven = document.querySelector('#seven')
-const eight = document.querySelector('#eight')
-const nine = document.querySelector('#nine')
-const zero = document.querySelector('#zero')
-const add = document.querySelector('#add')
-const subtract = document.querySelector('#subtract')
-const multiply = document.querySelector('#multiply')
-const divide = document.querySelector('#divide')
-const decimal = document.querySelector('#decimal')
-const clear = document.querySelector('#clear')
-const equal = document.querySelector('#equal')
-
-
-
-
+const one = document.querySelector('#one');
+const two = document.querySelector('#two');
+const three = document.querySelector('#three');
+const four = document.querySelector('#four');
+const five = document.querySelector('#five');
+const six = document.querySelector('#six');
+const seven = document.querySelector('#seven');
+const eight = document.querySelector('#eight');
+const nine = document.querySelector('#nine');
+const zero = document.querySelector('#zero');
+const add = document.querySelector('#add');
+const subtract = document.querySelector('#subtract');
+const multiply = document.querySelector('#multiply');
+const divide = document.querySelector('#divide');
+const decimal = document.querySelector('#decimal');
+const clear = document.querySelector('#clear');
+const equal = document.querySelector('#equal');
 
 // Functions for each number button and the decimal button.(0-9)
 
-function handleNumberOne(){
-  //if statement to ensure the second number considered 
+function handleNumberOne() {
+  //if statement to ensure the second number considered
   //for evaluation can be updated for calculation
-  if (operation !== ''){
+  if (operation !== '') {
     secondNumber += '1';
     updateScreen();
-  }
-  else {
-    firstNumber += '1'
-    updateScreen()
+  } else {
+    firstNumber += '1';
+    updateScreen();
   }
 }
 
-
-
-function handleNumberTwo(){
-  result = ''
-  if (operation !== ''){
+function handleNumberTwo() {
+  result = '';
+  if (operation !== '') {
     secondNumber += '2';
     updateScreen();
-  }
-  else {
-    firstNumber += '2'
-    updateScreen()
+  } else {
+    firstNumber += '2';
+    updateScreen();
   }
 }
 
-
-function handleNumberThree(){
-  result = ''
-  if (operation !== ''){
+function handleNumberThree() {
+  result = '';
+  if (operation !== '') {
     secondNumber += '3';
     updateScreen();
-  }
-  else {
-    firstNumber += '3'
-    updateScreen()
+  } else {
+    firstNumber += '3';
+    updateScreen();
   }
 }
 
-
-function handleNumberFour(){
-  result = ''
-  if (operation !== ''){
+function handleNumberFour() {
+  result = '';
+  if (operation !== '') {
     secondNumber += '4';
     updateScreen();
-  }
-  else {
-    firstNumber += '4'
-    updateScreen()
+  } else {
+    firstNumber += '4';
+    updateScreen();
   }
 }
 
-
-function handleNumberFive(){
-  result = ''
-  if (operation !== ''){
+function handleNumberFive() {
+  result = '';
+  if (operation !== '') {
     secondNumber += '5';
     updateScreen();
-  }
-  else {
-    firstNumber += '5'
-    updateScreen()
+  } else {
+    firstNumber += '5';
+    updateScreen();
   }
 }
 
-
-function handleNumberSix(){
-  result = ''
-  if (operation !== ''){
+function handleNumberSix() {
+  result = '';
+  if (operation !== '') {
     secondNumber += '6';
     updateScreen();
-  }
-  else {
-    firstNumber += '6'
-    updateScreen()
+  } else {
+    firstNumber += '6';
+    updateScreen();
   }
 }
 
-
-function handleNumberSeven(){
-  result = ''
-  if (operation !== ''){
+function handleNumberSeven() {
+  result = '';
+  if (operation !== '') {
     secondNumber += '7';
     updateScreen();
-  }
-  else {
-    firstNumber += '7'
-    updateScreen()
+  } else {
+    firstNumber += '7';
+    updateScreen();
   }
 }
 
-
-function handleNumberEight(){
-  result = ''
-  if (operation !== ''){
+function handleNumberEight() {
+  result = '';
+  if (operation !== '') {
     secondNumber += '8';
     updateScreen();
-  }
-  else {
-    firstNumber += '8'
-    updateScreen()
+  } else {
+    firstNumber += '8';
+    updateScreen();
   }
 }
 
-
-function handleNumberNine(){
-  result = ''
-  if (operation !== ''){
+function handleNumberNine() {
+  result = '';
+  if (operation !== '') {
     secondNumber += '9';
     updateScreen();
-  }
-  else {
-    firstNumber += '9'
-    updateScreen()
+  } else {
+    firstNumber += '9';
+    updateScreen();
   }
 }
 
-
-function handleNumberZero(){
-  result = ''
-  if (operation !== ''){
+function handleNumberZero() {
+  result = '';
+  if (operation !== '') {
     secondNumber += '0';
     updateScreen();
-  }
-  else {
-    firstNumber += '0'
-    updateScreen()
+  } else {
+    firstNumber += '0';
+    updateScreen();
   }
 }
 
-
-function handleDecimal(){
-  if (operation !== ''){
+function handleDecimal() {
+  if (operation !== '') {
     secondNumber += '.';
     updateScreen();
-  }
-  else {
-    firstNumber += '.'
-    updateScreen()
+  } else {
+    firstNumber += '.';
+    updateScreen();
   }
 }
 
 // Functions for the operation buttons(+, -, /, *)
 
+function handleAddition() {
+  if (firstNumber && secondNumber) {
+    calcResult();
+    return;
+  }
 
-function handleAddition(){
-  
-  if (result !== ''){
+  if (result !== '') {
     firstNumber = result;
     operation = '+';
     updateScreen(operation);
-  }
-  else if(firstNumber !== ''){
+  } else if (firstNumber !== '') {
     operation = '+';
     updateScreen(operation);
   }
 }
 
-function handleSubtraction(){
-  if (result !== ''){
+function handleSubtraction() {
+  if (firstNumber && secondNumber) {
+    calcResult();
+    return;
+  }
+  if (result !== '') {
     firstNumber = result;
     operation = '-';
     updateScreen(operation);
-  }
-  else if(firstNumber !== ''){
+  } else if (firstNumber !== '') {
     operation = '-';
     updateScreen(operation);
   }
 }
 
-function handleDivision(){
-  if (result !== ''){
+function handleDivision() {
+  if (firstNumber && secondNumber) {
+    calcResult();
+    return;
+  }
+  if (result !== '') {
     firstNumber = result;
     operation = '/';
     updateScreen(operation);
-  }
-  else if(firstNumber !== ''){
+  } else if (firstNumber !== '') {
     operation = '/';
     updateScreen(operation);
   }
 }
-function handleMultiplication(){
-  if (result !== ''){
+function handleMultiplication() {
+  if (firstNumber && secondNumber) {
+    calcResult();
+    return;
+  }
+  if (result !== '') {
     firstNumber = result;
     operation = 'x';
     updateScreen(operation);
-  }
-  else if(firstNumber !== ''){
+  } else if (firstNumber !== '') {
     operation = 'x';
     updateScreen(operation);
   }
@@ -250,7 +229,6 @@ function clearScreen() {
   operation = '';
   secondNumber = '';
   result = '';
-  
 }
 
 //Event Listeners that call the functions
@@ -270,63 +248,63 @@ multiply.addEventListener('click', handleMultiplication);
 divide.addEventListener('click', handleDivision);
 decimal.addEventListener('click', handleDecimal);
 clear.addEventListener('click', clearScreen);
-equal.addEventListener('click', calcResult);
-
-
+equal.addEventListener('click', calcResult2);
 
 // Function that calculates the expression, then displays the result on the screen
 
 function calcResult() {
   let a = Number(firstNumber);
   let b = Number(secondNumber);
-  
+
   // CLEARS SECOND NUMBER VARIABLE
-  secondNumber = ''
-  
-  if(operation === '+'){
+  secondNumber = '';
+
+  if (operation === '+') {
     result = a + b;
-  }
-  else if(operation === '-'){
+  } else if (operation === '-') {
     result = a - b;
-  }
-  else if(operation === 'x'){
+  } else if (operation === 'x') {
     result = a * b;
-  }
-  else if (operation === '/'){
+  } else if (operation === '/') {
     result = a / b;
   }
-  
+
   document.querySelector('#screen').innerText = result;
-  
-  
-  //why did I do this?
-  firstNumber = '';
-  
-  //CLEARS THE OPERATION VARIABLE
-  operation = ''; 
-  
-  if (document.querySelectorAll('.buttons').clicked === true){
+
+  //CLEARS THE FIRST NUMBER VARIABLE
+  firstNumber = result;
+
+  if (document.querySelectorAll('.buttons').clicked === true) {
     firstNumber = '';
   }
 }
+function calcResult2() {
+  let a = Number(firstNumber);
+  let b = Number(secondNumber);
 
+  // CLEARS SECOND NUMBER VARIABLE
+  secondNumber = '';
 
+  if (operation === '+') {
+    result = a + b;
+  } else if (operation === '-') {
+    result = a - b;
+  } else if (operation === 'x') {
+    result = a * b;
+  } else if (operation === '/') {
+    result = a / b;
+  }
 
+  document.querySelector('#screen').innerText = result;
 
+  //CLEARS THE FIRST NUMBER VARIABLE
+  firstNumber = '';
 
+  //CLEARS THE OPERATION VARIABLE
 
+  operation = '';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  if (document.querySelectorAll('.buttons').clicked === true) {
+    firstNumber = '';
+  }
+}
